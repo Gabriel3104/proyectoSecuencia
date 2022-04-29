@@ -10,334 +10,77 @@ public class AppTest {
     @Test
     public void cuando_recibe_tecla_a_debe_retornar_2(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("A");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "A";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(2, posicion);
+        assertEquals("2", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_d_debe_retornar_3(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("D");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "D";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(3, posicion);
+        assertEquals("3", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_g_debe_retornar_4(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("G");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "G";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(4, posicion);
+        assertEquals("4", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_j_debe_retornar_5(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("J");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "J";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(5, posicion);
+        assertEquals("5", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_m_debe_retornar_6(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("M");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "M";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(6, posicion);
+        assertEquals("6", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_p_debe_retornar_7(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("P");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "P";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(7, posicion);
+        assertEquals("7", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_t_debe_retornar_8(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("T");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "T";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(8, posicion);
+        assertEquals("8", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_w_debe_retornar_9(){
 
-        String caracteres [] = new String [9];
+        String resultado = calcularSecuencia("W");
 
-        caracteres[0] = " ";
-        caracteres[1] = "A,B,C";
-        caracteres[2] = "D,E,F";
-        caracteres[3] = "G,H,I";
-        caracteres[4] = "J,K,L";
-        caracteres[5] = "M,N,O";
-        caracteres[6] = "P,Q,R,S";
-        caracteres[7] = "T,U,V";
-        caracteres[8] = "W,X,Y,Z";
-
-        String frase = "W";
-        //String splitFrase[] = frase.split("");
-        int posicion=0;
-    
-
-        for( int i=0; i<caracteres.length; i++ ){
-            
-            String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
-            
-            System.out.println(); //para hacer espacio
-
-            for( int x=0; x<teclas.length; x++ ){
-                
-                if( teclas[x].equals(frase) ){
-                    System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
-                    posicion = i+1;
-                }
-
-                System.out.println(teclas[x]);
-            }
-
-        }
-
-        assertEquals(9, posicion);
+        assertEquals("9", resultado);
     }
 
     @Test
     public void cuando_recibe_tecla_aa_debe_retornar_22(){
 
+        String resultado = calcularSecuencia("AA");
+
+        assertEquals("22", resultado);
+    }
+    
+    public String calcularSecuencia(String frase){
+        
         String caracteres [] = new String [9];
 
         caracteres[0] = " ";
@@ -350,7 +93,7 @@ public class AppTest {
         caracteres[7] = "T,U,V";
         caracteres[8] = "W,X,Y,Z";
 
-        String frase = "AA";
+
         String splitFrase[] = frase.split("");
         String posicion="";
     
@@ -383,12 +126,9 @@ public class AppTest {
 
             }
         }
-            
 
-        assertEquals("22", posicion);
+        return posicion;
     }
-
-
 }
 
 
