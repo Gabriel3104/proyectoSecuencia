@@ -118,6 +118,14 @@ public class AppTest {
 
         assertEquals("333666 666022 2777", resultado);
     }
+
+    @Test
+    public void cuando_recibe_la_palabra_HELLO_WORLD_debe_retornar_4433555_555666096667775553(){
+
+        String resultado = calcularSecuencia("HELLO WORLD");
+
+        assertEquals("4433555 555666096667775553", resultado);
+    }
     
     public String calcularSecuencia(String frase){
         
