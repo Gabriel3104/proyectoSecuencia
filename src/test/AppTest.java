@@ -88,7 +88,7 @@ public class AppTest {
     }
 
     @Test
-    public void cuando_recibe_tecla_aa_debe_retornar_2_2(){
+    public void cuando_recibe_aa_debe_retornar_2_2(){
 
         String resultado = calcularSecuencia("AA");
 
@@ -96,11 +96,19 @@ public class AppTest {
     }
 
     @Test
-    public void cuando_recibe_tecla_HI_debe_retornar_44_444(){
+    public void cuando_recibe_la_palabra_HI_debe_retornar_44_444(){
 
         String resultado = calcularSecuencia("HI");
 
         assertEquals("44 444", resultado);
+    }
+
+    @Test
+    public void cuando_recibe_la_palabra_YES_debe_retornar_999337777(){
+
+        String resultado = calcularSecuencia("YES");
+
+        assertEquals("999337777", resultado);
     }
     
     public String calcularSecuencia(String frase){
