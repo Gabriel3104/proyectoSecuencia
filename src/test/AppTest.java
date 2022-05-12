@@ -110,6 +110,14 @@ public class AppTest {
 
         assertEquals("999337777", resultado);
     }
+
+    @Test
+    public void cuando_recibe_la_palabra_FOO_BAR_debe_retornar_333666_666022_2777(){
+
+        String resultado = calcularSecuencia("FOO BAR");
+
+        assertEquals("333666 666022 2777", resultado);
+    }
     
     public String calcularSecuencia(String frase){
         
