@@ -94,6 +94,14 @@ public class AppTest {
 
         assertEquals("2 2", resultado);
     }
+
+    @Test
+    public void cuando_recibe_tecla_HI_debe_retornar_44_444(){
+
+        String resultado = calcularSecuencia("HI");
+
+        assertEquals("44 444", resultado);
+    }
     
     public String calcularSecuencia(String frase){
         
@@ -145,7 +153,7 @@ public class AppTest {
                         }
 
                         else{
-                            
+
                             for(int p=0; p<=indiceDeTeclas; p++){
                                 posicion = posicion + (indiceDeCaracteres + 1);
                             }
