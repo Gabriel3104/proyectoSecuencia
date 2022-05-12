@@ -2,11 +2,27 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.swing.SpringLayout;
+
 import org.junit.Test;
 
 public class AppTest {
     
+    @Test
+    public void cuando_recibe_tecla_espacio_debe_retornar_0(){
+        
+        String resultado = calcularSecuencia(" ");
 
+        assertEquals("0", resultado);
+    }
+    
+    
     @Test
     public void cuando_recibe_tecla_a_debe_retornar_2(){
 
@@ -72,11 +88,11 @@ public class AppTest {
     }
 
     @Test
-    public void cuando_recibe_tecla_aa_debe_retornar_22(){
+    public void cuando_recibe_tecla_aa_debe_retornar_2_2(){
 
         String resultado = calcularSecuencia("AA");
 
-        assertEquals("22", resultado);
+        assertEquals("2 2", resultado);
     }
     
     public String calcularSecuencia(String frase){
@@ -97,32 +113,49 @@ public class AppTest {
         String splitFrase[] = frase.split("");
         String posicion="";
     
-        for(int y = 0; y<splitFrase.length; y++){
+        for(int indiceDeFrase = 0; indiceDeFrase<splitFrase.length; indiceDeFrase++){
             
-            for( int i=0; i<caracteres.length; i++ ){
+            for( int indiceDeCaracteres=0; indiceDeCaracteres<caracteres.length; indiceDeCaracteres++ ){
             
-                String teclas[] = caracteres[i].split(","); //me guarda cada letra en un vector
+                String teclas[] = caracteres[indiceDeCaracteres].split(","); //me guarda cada letra en un vector
                 
+                List <String> listTeclas = Arrays.asList(teclas);
+
                 System.out.println(); //para hacer espacio
 
-                for( int x=0; x<teclas.length; x++ ){
+                for( int indiceDeTeclas=0; indiceDeTeclas<teclas.length; indiceDeTeclas++ ){
                     
-                    if( teclas[x].equals(splitFrase[y]) ){
-                        System.out.println("La tecla " + teclas[x] + " se encuentra en la tecla " + (i+1));
+                    if( teclas[indiceDeTeclas].equals(splitFrase[indiceDeFrase]) ){ //BUSCA COINCIDENCIA DE TECLA CON FRASE
+                        System.out.println("La tecla " + teclas[indiceDeTeclas] + " se encuentra en la tecla " + (indiceDeCaracteres+1));
                         
-                        for (int p=0; p<=x; p++){
-                            
-                            if(splitFrase[y].equals(" ")){
-                                posicion = posicion + i;
 
-                            }else{
-                                posicion = posicion + (i+1);
+                        if(splitFrase[indiceDeFrase].equals(" ")){
+                            posicion = posicion + indiceDeCaracteres;
+                        }
+                        else if ((indiceDeFrase+1)<splitFrase.length){
+                            
+                            for(int p=0; p<=indiceDeTeclas; p++){
+                               posicion = posicion + (indiceDeCaracteres + 1);
                             }
-                        }  
+                            
+
+                            if (listTeclas.contains(splitFrase[indiceDeFrase + 1])){
+                                posicion = posicion + " ";
+                            }
+                        }
+
+                        else{
+                            
+                            for(int p=0; p<=indiceDeTeclas; p++){
+                                posicion = posicion + (indiceDeCaracteres + 1);
+                            }
+                        }
+                        
                     }
 
-                    System.out.println(teclas[x]);
+                    System.out.println(teclas[indiceDeTeclas]);
                 }
+                
 
             }
         }
