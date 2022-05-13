@@ -153,12 +153,10 @@ public class AppTest {
                 
                 List <String> listTeclas = Arrays.asList(teclas);
 
-                System.out.println(); //para hacer espacio
 
                 for( int indiceDeTeclas=0; indiceDeTeclas<teclas.length; indiceDeTeclas++ ){
                     
                     if( teclas[indiceDeTeclas].equals(splitFrase[indiceDeFrase]) ){ //BUSCA COINCIDENCIA DE TECLA CON FRASE
-                        System.out.println("La tecla " + teclas[indiceDeTeclas] + " se encuentra en la tecla " + (indiceDeCaracteres+1));
                         
 
                         if(splitFrase[indiceDeFrase].equals(" ")){
@@ -185,10 +183,8 @@ public class AppTest {
                         
                     }
 
-                    System.out.println(teclas[indiceDeTeclas]);
                 }
                 
-
             }
         }
 
