@@ -4,7 +4,14 @@ import java.util.List;
 
 public class CalculadoraDeSecuencia {
     
-    public static String calcularSecuencia(String frase){
+    public String posicion = "";
+
+    public CalculadoraDeSecuencia(){
+
+    }
+    
+
+    public String calcularSecuencia(String frase){
         
         String caracteres [] = new String [9];
 
@@ -20,51 +27,68 @@ public class CalculadoraDeSecuencia {
 
 
         String splitFrase[] = frase.split("");
-        String posicion="";
+
+        return calcularSecuenciaSegunFrase(splitFrase, caracteres);
     
+    }
+
+    private String calcularSecuenciaSegunFrase(String[] splitFrase, String[] caracteres) {
+        
         for(int indiceDeFrase = 0; indiceDeFrase<splitFrase.length; indiceDeFrase++){
             
-            for( int indiceDeCaracteres=0; indiceDeCaracteres<caracteres.length; indiceDeCaracteres++ ){
+            buscaCoincidenciaTeclaYLetra(caracteres,splitFrase,indiceDeFrase);
             
-                String teclas[] = caracteres[indiceDeCaracteres].split(","); //me guarda cada letra en un vector
-                
-                List <String> listTeclas = Arrays.asList(teclas);
-
-
-                for( int indiceDeTeclas=0; indiceDeTeclas<teclas.length; indiceDeTeclas++ ){
-                    
-                    if( teclas[indiceDeTeclas].equals(splitFrase[indiceDeFrase]) ){ //BUSCA COINCIDENCIA DE TECLA CON FRASE
-                        
-
-                        if(splitFrase[indiceDeFrase].equals(" ")){
-                            posicion = posicion + indiceDeCaracteres;
-                        }
-                        else if ((indiceDeFrase+1)<splitFrase.length){
-                            
-                            for(int p=0; p<=indiceDeTeclas; p++){
-                               posicion = posicion + (indiceDeCaracteres + 1);
-                            }
-                            
-
-                            if (listTeclas.contains(splitFrase[indiceDeFrase + 1])){
-                                posicion = posicion + " ";
-                            }
-                        }
-
-                        else{
-
-                            for(int p=0; p<=indiceDeTeclas; p++){
-                                posicion = posicion + (indiceDeCaracteres + 1);
-                            }
-                        }
-                        
-                    }
-
-                }
-                
-            }
         }
 
         return posicion;
+    }
+
+    private void buscaCoincidenciaTeclaYLetra(String[] caracteres, String[] splitFrase, int indiceDeFrase){
+        for( int indiceDeCaracteres=0; indiceDeCaracteres<caracteres.length; indiceDeCaracteres++ ){
+            String teclas[] = caracteres[indiceDeCaracteres].split(","); //me guarda cada letra en un vector
+                
+            
+            for( int indiceDeTeclas=0; indiceDeTeclas<teclas.length; indiceDeTeclas++ ){
+                
+                boolean existeCoincidencia = teclas[indiceDeTeclas].equals(splitFrase[indiceDeFrase]);//BUSCA COINCIDENCIA DE TECLA CON FRASE
+
+                if( existeCoincidencia ){ 
+                    validar(indiceDeTeclas, indiceDeCaracteres, splitFrase, indiceDeFrase,teclas);
+                }
+            }
+        }
+        
+    }
+
+
+    private void validar(int indiceDeTeclas, int indiceDeCaracteres, String[] splitFrase, int indiceDeFrase, String[]teclas) {
+        
+        List <String> listTeclas = Arrays.asList(teclas);
+        boolean esUnEspacio = splitFrase[indiceDeFrase].equals(" ");
+        boolean NoEsLaUltimaPosicion = (indiceDeFrase+1)<splitFrase.length;
+        
+        if(esUnEspacio){
+            posicion = posicion + indiceDeCaracteres;
+        }
+        else if (NoEsLaUltimaPosicion){
+            concatenarPulsaciones(indiceDeTeclas,indiceDeCaracteres);
+            boolean teclaContieneProximaLetraDeFrase = listTeclas.contains(splitFrase[indiceDeFrase + 1]);
+            
+            if (teclaContieneProximaLetraDeFrase){
+                posicion = posicion + " ";
+            }
+        }
+        else{
+            concatenarPulsaciones(indiceDeTeclas, indiceDeCaracteres);
+        }
+        
+        
+    }
+
+
+    private void concatenarPulsaciones(int indiceDeTeclas, int indiceDeCaracteres) {
+        for(int p=0; p<=indiceDeTeclas; p++){
+            posicion = posicion + (indiceDeCaracteres + 1);
+        }
     }
 }
