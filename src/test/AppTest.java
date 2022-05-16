@@ -118,7 +118,7 @@ public class AppTest {
     @Test
     public void cuando_recibe_la_palabra_HELLO_WORLD_debe_retornar_4433555_555666096667775553(){
 
-        String resultado = calculadora.calcularSecuencia("HELLO WORLD");
+        String resultado = calculadora.calcularSecuencia("HeLLO WOrLd");
 
         assertEquals("4433555 555666096667775553", resultado);
     }

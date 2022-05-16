@@ -12,7 +12,7 @@ public class CalculadoraDeSecuencia {
     
 
     public String calcularSecuencia(String frase){
-        
+        String fraseMayuscula = frase.toUpperCase();
         String caracteres [] = new String [9];
 
         caracteres[0] = " ";
@@ -26,7 +26,7 @@ public class CalculadoraDeSecuencia {
         caracteres[8] = "W,X,Y,Z";
 
 
-        String splitFrase[] = frase.split("");
+        String splitFrase[] = fraseMayuscula.split("");
 
         return calcularSecuenciaSegunFrase(splitFrase, caracteres);
     
